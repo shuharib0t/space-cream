@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-header: 'Staatliches', cursive;
+  --ff-body-text: 'Palanquin', sans-serif;
+
+  --hue: 250;
+  --header-color: hsl(218, 17%, 62%);
+  --header-stripe-color: hsl(275, 18%, 79%);
+  --bg-color: hsl(233, 100%, 97%);
+  --span: hsl(312, 91%, 96%);
+  --fc-body: hsl(274, 84%, 12%);
+  --fc-header: hsl(var(--hue), 0%, 100%);
+  --fc-card: hsl(232, 17%, 35%);
+
+  font-size: 62.5%;
+  --fs-body: 1.3rem;
+  --fs-header: 4rem;
+  --fs-card: 2rem;
+}
+
+body {
+  font-family: var(--ff-body-text);
+
+  text-align: center;
+
+  background-color: var(--bg-color);
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 27.9rem;
+
+  background-color: var(--header-color);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.page {
+  max-width: 38.4rem;
+
+  margin: 0 auto;
+}
+
+header {
+  max-width: 38.4rem;
+  height: 24.7rem;
+
+  margin-top: 3.2rem;
+}
+
+header img {
+  height: 13.7rem;
+}
+
+header .stripe {
+  padding: 0.8rem 8.6rem;
+
+  margin-top: 2.6rem;
+
+  background-color: var(--header-stripe-color);
+}
+
+header h1 {
+  font-family: var(--ff-header);
+  
+  font-weight: 400;
+  font-size: var(--fs-header);
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+
+  color: var(--fc-header);
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 1.4rem 0 6rem;
+}
+
+main p {
+  max-width: 29.6rem;
+
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.5rem;
+
+  margin-bottom: 6.3rem;
+
+  color: var(--fc-body);
+}
+
+.card {
+  position: relative;
+}
+
+.card + .card {
+  margin-top: 3.4rem;
+}
+
+.card span {
+  position: absolute;
+
+  top: 1.6rem;
+  right: 1.6rem;
+
+  padding: 0 2.4rem;
+  border-radius: 2rem;
+
+  max-width: 11.2rem;
+  height: 3.5rem;
+
+  display: inline-flex;
+  align-items: center;
+
+  font-family: var(--ff-header);
+  font-size: var(--fs-card);
+  letter-spacing: 0.05em;
+
+  background-color: var(--span);
+  color: var(--fc-card);
+
+  animation: topdown 500ms 300ms backwards;
+}
+
+.card img {
+  transition: all 500ms;
+  animation: downtop 500ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
