@@ -63,7 +63,7 @@ header img {
 }
 
 header .stripe {
-  padding: 0.8rem 8.6rem;
+  padding: 0.8rem 0;
 
   margin-top: 2.6rem;
 
@@ -88,7 +88,8 @@ main {
   flex-direction: column;
   align-items: center;
 
-  margin: 1.4rem 0 6rem;
+  margin: 1.4rem auto 6rem;
+  padding: 0 3.2rem;
 }
 
 main p {
@@ -105,6 +106,7 @@ main p {
 
 .card {
   position: relative;
+  
 }
 
 .card + .card {
@@ -137,6 +139,8 @@ main p {
 }
 
 .card img {
+  width: 100%;
+
   transition: all 500ms;
   animation: downtop 500ms;
 }
